@@ -1,0 +1,14 @@
+# Core
+numpy>=1.26
+opencv-python>=4.9
+Pillow>=10.2
+
+# Dashboard
+streamlit>=1.32
+pandas>=2.2
+matplotlib>=3.8
+
+# Deep learning (optional - only needed if you train/use a YOLOv8 model)
+# Comment out if you only want the classical CV fallback detector
+ultralytics>=8.1
+torch>=2.2
