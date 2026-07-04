@@ -75,7 +75,11 @@ def _detect_cracks(raw_gray: np.ndarray, img_shape) -> List[DefectDetection]:
     max_len = 0.35 * max(img_w, img_h)  # long, perfectly straight spans are panel seams, not cracks
 
     for line in lines:
-        x1, y1, x2, y2 = line[0]
+        # HoughLinesP normally returns shape (N, 1, 4), so line[0] is the
+        # 4-tuple. Some OpenCV builds instead return shape (N, 4), where
+        # `line` itself is already the 4-tuple. np.array(line).reshape(-1)
+        # handles both cases safely.
+        x1, y1, x2, y2 = np.array(line).reshape(-1)
         length = np.hypot(x2 - x1, y2 - y1)
         if length < 35 or length > max_len:
             continue
