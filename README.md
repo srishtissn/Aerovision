@@ -154,17 +154,6 @@ model for production accuracy.**
 
 ---
 
-## For your InnoVent submission
-
-- **Demo video**: record a screen capture of `streamlit run app.py` —
-  upload a sample image, show the overlay + heatmap + report, then
-  switch to Progression Tracking mode with `panel_defects_scan1.jpg`
-  and `panel_defects_scan2.jpg` to show growth detection live.
-- **Technical implementation slide**: reference the backend table
-  above and the tech stack in `requirements.txt`.
-- **Future enhancements slide**: point to the "Upgrading to a trained
-  ML model" section — it's a genuine, already-scaffolded upgrade
-  path, not just a slide bullet.
 
 ---
 
