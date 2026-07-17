@@ -85,6 +85,42 @@ sidebar to compare two scans.
 
 ---
 
+## Dashboard preview
+
+The Streamlit dashboard (`app.py`) has two modes — Single Scan Inspection
+and Progression Tracking — shown below with a screenshot of each view.
+
+### Single Scan Inspection
+
+An uploaded panel image gets flagged regions drawn directly on it, with
+the defect type, confidence, and severity band:
+
+![Detection overlay on an uploaded panel image](docs/screenshots/detection_overlay.png)
+
+The "Explainability Heatmap" tab shows *why* a region was flagged, instead
+of just a bounding box:
+
+![Explainability heatmap for a flagged region](docs/screenshots/explainability_heatmap.png)
+
+Every flagged region also lands in a downloadable inspection report, with
+severity score, band, and a recommended action per defect:
+
+![Inspection report table with severity scoring](docs/screenshots/inspection_report.png)
+
+### Progression Tracking
+
+Two scans of the same panel — upload both (or use bundled samples) — get
+matched and compared side by side:
+
+![Setting up a two-scan progression comparison](docs/screenshots/progression_tracking_setup.png)
+
+The progression report shows which defects grew, shrank, appeared, or
+resolved between the two scans, with an urgency callout:
+
+![Progression report comparing two scans](docs/screenshots/progression_report.png)
+
+---
+
 ## Project Structure
 
 ```
@@ -101,6 +137,8 @@ aerovision/
 │   └── report.py              # Overlay drawing, heatmap, report table
 ├── models/
 │   └── README.md              # Where to place trained YOLOv8 weights (best.pt)
+├── docs/
+│   └── screenshots/           # Dashboard screenshots used in this README
 └── data/
     └── sample_images/         # Synthetic demo panel images
 ```
